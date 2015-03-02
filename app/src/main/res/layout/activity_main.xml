@@ -20,8 +20,7 @@
         android:layout_height="wrap_content"
         android:text="@string/createTripBtn_text"
         android:id="@+id/createTripBtn"
-        android:layout_marginTop="100dp"
-        android:layout_below="@+id/textView"
+        android:layout_above="@+id/editContactsBtn"
         android:layout_centerHorizontal="true" />
 
     <Button
@@ -29,7 +28,7 @@
         android:layout_height="wrap_content"
         android:text="Edit Emergency Contacts"
         android:id="@+id/editContactsBtn"
-        android:layout_below="@+id/createTripBtn"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
