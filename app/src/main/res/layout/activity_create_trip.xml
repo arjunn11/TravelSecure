@@ -49,7 +49,7 @@
         android:id="@+id/intervalA"
         android:hint="@string/intervalHint"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content "
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_below="@id/intervalQ"
         android:layout_centerHorizontal="true"
@@ -65,19 +65,30 @@
         android:layout_centerHorizontal="true"
         android:textSize="20sp"/>
 
+    <Button
+        android:id="@+id/chooseTimeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/chooseTimeBtn"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/returnTime"
+        android:layout_centerHorizontal="true"
+        android:onClick="showTimePickerDialog"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        />
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <Button
+        android:id="@+id/startTripBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/startTripBtn"
+        android:layout_marginTop="45dp"
+        android:layout_below="@id/chooseTimeBtn"
+        android:layout_centerHorizontal="true"
+        android:onClick="startTrip"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        />
 
 </RelativeLayout>

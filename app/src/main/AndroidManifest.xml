@@ -21,13 +21,18 @@
             android:label="@string/title_activity_create_trip" >
         </activity>
         <activity
-            android:name=".EditContactsActivit"
-            android:label="@string/title_activity_edit_contacts" >
-        </activity>
-        <activity
             android:name=".EditContactsActivity"
             android:label="@string/title_activity_edit_contacts" >
         </activity>
+        <activity
+            android:name=".TripActivity"
+            android:label="@string/title_activity_trip" >
+        </activity>
+
+        <service
+            android:name=".TripService"
+            android:exported="false" >
+        </service>
     </application>
 
 </manifest>

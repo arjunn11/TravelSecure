@@ -13,11 +13,10 @@
     <string name="intervalQ">How often should we ping you?</string>
     <string name="intervalHint">Enter a Time (minutes) </string>
     <string name="returnTime">What time will you be back by?</string>
-
-
-
-
-
+    <string name="chooseTimeBtn">Select a Time</string>
+    <string name="startTripBtn">Start Trip</string>
+    <string name="title_activity_trip">TripActivity</string>
+    <string name="tripInProgress">Trip In Progress</string>
 
 
 </resources>

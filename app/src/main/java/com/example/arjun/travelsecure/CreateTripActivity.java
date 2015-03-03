@@ -1,17 +1,43 @@
 package com.example.arjun.travelsecure;
 
+import android.app.DialogFragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 
 
-public class CreateTripActivity extends ActionBarActivity {
+public class CreateTripActivity extends ActionBarActivity implements View.OnClickListener{
+    private EditText userDestination = (EditText) findViewById(R.id.userDestinationA);
+    private EditText timeInterval = (EditText) findViewById(R.id.intervalA);
+
+    public final static String destination_ = "destination_";
+    public final static String time_ = "time_";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_trip);
+    }
+
+    public void showTimePickerDialog(View v) {
+        DialogFragment newFragment = new TimePickerFragment();
+        newFragment.show(getFragmentManager(), "timePicker");
+            }
+
+    public void onClick (View view){
+        if(view.getId() == R.id.startTripBtn){
+            Intent tripIntent = new Intent(this, TripActivity.class);
+            String destination = userDestination.getText().toString();
+            tripIntent.putExtra(destination_, destination);//add user destination to intent
+            String timeTxt = timeInterval.getText().toString();
+            tripIntent.putExtra(time_, timeTxt);//add time interval to intent
+
+            this.startActivity(tripIntent);
+        }
     }
 
 
