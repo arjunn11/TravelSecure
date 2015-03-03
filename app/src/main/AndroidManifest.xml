@@ -29,10 +29,7 @@
             android:label="@string/title_activity_trip" >
         </activity>
 
-        <service
-            android:name=".TripService"
-            android:exported="false" >
-        </service>
+        <service android:name=".TripIntentService"/>
     </application>
 
 </manifest>

@@ -18,10 +18,10 @@ public class TripActivity extends ActionBarActivity {
         String destination = tripIntent.getStringExtra(CreateTripActivity.destination_);
         String time = tripIntent.getStringExtra(CreateTripActivity.time_);
         double timeInterval = Double.parseDouble(time);
+        String phoneNumber = "4259999612";
 
-
-
-
+        Intent serviceIntent = new Intent(this, TripIntentService.class);
+        startService(serviceIntent);
     }
 
     @Override

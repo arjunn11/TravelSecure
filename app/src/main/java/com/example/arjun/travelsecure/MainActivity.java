@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends ActionBarActivity implements View.OnClickListener {
+public class MainActivity extends ActionBarActivity /*implements View.OnClickListener*/ {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,12 +18,19 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         TextView appName = (TextView) findViewById(R.id.appName);
         appName.setTextSize(40);
         Button createTripBtn = (Button) findViewById(R.id.createTripBtn);
-        createTripBtn.setOnClickListener(this);
+        //createTripBtn.setOnClickListener(this);
         Button editContactsBtn = (Button) findViewById(R.id.editContactsBtn);
-        editContactsBtn.setOnClickListener(this);
+       // editContactsBtn.setOnClickListener(this);
     }
 
-    public void onClick (View view){
+    //called when usesr clicks Create a Trip button
+    public void launchCreateTrip(View view){
+        Intent tripIntent = new Intent(this, CreateTripActivity.class);
+        startActivity(tripIntent);
+    }
+
+
+    /*public void onClick (View view){
         if(view.getId() == R.id.createTripBtn){
             Intent tripIntent = new Intent(this, CreateTripActivity.class);
             this.startActivity(tripIntent);
@@ -33,7 +40,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             Intent editIntent = new Intent(this, EditContactsActivity.class);
             this.startActivity(editIntent);
         }
-    }
+    }*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

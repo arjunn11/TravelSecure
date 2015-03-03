@@ -10,9 +10,9 @@ import android.view.View;
 import android.widget.EditText;
 
 
-public class CreateTripActivity extends ActionBarActivity implements View.OnClickListener{
-    private EditText userDestination = (EditText) findViewById(R.id.userDestinationA);
-    private EditText timeInterval = (EditText) findViewById(R.id.intervalA);
+public class CreateTripActivity extends ActionBarActivity{
+    private EditText userDestination;
+    private EditText timeInterval;
 
     public final static String destination_ = "destination_";
     public final static String time_ = "time_";
@@ -21,6 +21,7 @@ public class CreateTripActivity extends ActionBarActivity implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_trip);
+
     }
 
     public void showTimePickerDialog(View v) {
@@ -28,8 +29,9 @@ public class CreateTripActivity extends ActionBarActivity implements View.OnClic
         newFragment.show(getFragmentManager(), "timePicker");
             }
 
-    public void onClick (View view){
-        if(view.getId() == R.id.startTripBtn){
+    public void launchTripActivity(View view){
+            userDestination = (EditText) findViewById(R.id.userDestinationA);
+            timeInterval = (EditText) findViewById(R.id.intervalA);
             Intent tripIntent = new Intent(this, TripActivity.class);
             String destination = userDestination.getText().toString();
             tripIntent.putExtra(destination_, destination);//add user destination to intent
@@ -37,7 +39,7 @@ public class CreateTripActivity extends ActionBarActivity implements View.OnClic
             tripIntent.putExtra(time_, timeTxt);//add time interval to intent
 
             this.startActivity(tripIntent);
-        }
+
     }
 
 
