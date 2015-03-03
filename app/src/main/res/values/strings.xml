@@ -5,7 +5,19 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="createTripBtn_text">Create a Trip</string>
-    <string name="title_activity_create_trip">CreateTripActivity</string>
-    <string name="title_activity_edit_contacts">EditContactsActivit</string>
+    <string name="title_activity_create_trip">Create a Trip</string>
+    <string name="title_activity_edit_contacts">Edit Contacts</string>
+    <string name="createTripTxt">Create a Trip</string>
+    <string name="userDestinationQ">Where are you going?</string>
+    <string name="destinationHint">Enter a Location</string>
+    <string name="intervalQ">How often should we ping you?</string>
+    <string name="intervalHint">Enter a Time (minutes) </string>
+    <string name="returnTime">What time will you be back by?</string>
+
+
+
+
+
+
 
 </resources>
