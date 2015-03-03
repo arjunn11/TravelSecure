@@ -24,6 +24,10 @@ public class TripActivity extends ActionBarActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        // do nothing.
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
