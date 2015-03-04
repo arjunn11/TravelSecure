@@ -29,7 +29,20 @@
             android:label="@string/title_activity_trip" >
         </activity>
 
-        <service android:name=".TripIntentService"/>
+        <service android:name=".TripIntentService" />
+        <service
+            android:name=".TripService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
+
+        <activity
+            android:name=".UserCheckInActivity"
+            android:label="@string/title_activity_user_check_in" >
+        </activity>
     </application>
 
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 </manifest>
