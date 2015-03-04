@@ -1,7 +1,9 @@
 package com.example.arjun.travelsecure;
 
 import android.app.DialogFragment;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -14,14 +16,22 @@ public class CreateTripActivity extends ActionBarActivity{
     private EditText userDestination;
     private EditText timeInterval;
 
+
     public final static String destination_ = "destination_";
     public final static String time_ = "time_";
+
+    SharedPreferences sharedPreferences;
+    public static final String MyPREFERENCES = "MyPrefs";
+    public static final String phoneKey = "phoneKey";
+    public static final String destinationKey = "destinationKey";
+    public static final String intervalKey = "intervalKey";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_trip);
 
+        sharedPreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_WORLD_READABLE);
     }
 
     public void showTimePickerDialog(View v) {
@@ -34,9 +44,17 @@ public class CreateTripActivity extends ActionBarActivity{
             timeInterval = (EditText) findViewById(R.id.intervalA);
             Intent tripIntent = new Intent(this, TripActivity.class);
             String destination = userDestination.getText().toString();
-            tripIntent.putExtra(destination_, destination);//add user destination to intent
-            String timeTxt = timeInterval.getText().toString();
-            tripIntent.putExtra(time_, timeTxt);//add time interval to intent
+            String interval = timeInterval.getText().toString();
+            String phoneNumber = "4259999612";//update to userInput
+
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString(phoneKey, phoneNumber);
+            editor.putString(intervalKey, interval);
+            editor.putString(destinationKey, destination);
+            editor.commit();
+
+            //tripIntent.putExtra(destination_, destination);//add user destination to intent
+            //tripIntent.putExtra(time_, timeTxt);//add time interval to intent
 
             this.startActivity(tripIntent);
 

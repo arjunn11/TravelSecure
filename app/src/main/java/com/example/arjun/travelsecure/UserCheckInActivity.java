@@ -16,7 +16,6 @@ public class UserCheckInActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_check_in);
 
-
         AlertDialog.Builder checkInDialog = new AlertDialog.Builder(this);
         checkInDialog.setTitle("TravelSecure Check-in");
         checkInDialog.setMessage("The time interval has expired, please tap the Check-in button below:");
@@ -25,11 +24,13 @@ public class UserCheckInActivity extends ActionBarActivity {
             @Override
             public void onClick(DialogInterface dialog, int id) {
                 stopService();
-                //restartService();
+                restartService();
+                finish();
             }
         });
         //start dialog and display on screen
         checkInDialog.show();
+
     }
 
     public void stopService(){
@@ -41,8 +42,6 @@ public class UserCheckInActivity extends ActionBarActivity {
         Intent startServiceIntent = new Intent(this, TripService.class);
         startService(startServiceIntent);
     }
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
