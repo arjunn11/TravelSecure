@@ -53,6 +53,7 @@
         android:layout_marginTop="10dp"
         android:layout_below="@id/intervalQ"
         android:layout_centerHorizontal="true"
+        android:inputType="numberDecimal"
         />
 
     <TextView
